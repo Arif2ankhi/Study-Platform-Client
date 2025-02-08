@@ -3,7 +3,7 @@ import logInLottieData from "../../assets/Lottie/signin2.json";
 import { useContext, useState } from "react";
 // import AuthContext from "../../context/AuthContext/AuthContext";
 import Swal from "sweetalert2";
-import { Link, useLocation, useNavigate } from "react-router-dom"; // Import useNavigate
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom"; // Import useNavigate
 import { ToastContainer } from "react-toastify"; // Import ToastContainer
 import "react-toastify/dist/ReactToastify.css"; // Import Toast styles
 // import axios from "axios";
@@ -11,7 +11,7 @@ import Lottie from "lottie-react";
 const SignIn = () => {
 //   const { signInUser, signInWithGoogle } = useContext(AuthContext);
 //   const [loading, setLoading] = useState(false); 
-//   const navigate = useNavigate(); 
+  const navigate = useNavigate(); 
 //   const location = useLocation();
 //   console.log('in sign in page', location);
 //   const from = location.state || '/';
@@ -47,8 +47,8 @@ const SignIn = () => {
     //       timer: 1500,
     //     });
 
-    //     // Redirect to home page after successful sign-in
-    //     navigate("/"); 
+        // Redirect to home page after successful sign-in
+        navigate("/"); 
 
     //     // clear form after successful login
 

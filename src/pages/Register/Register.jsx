@@ -1,5 +1,5 @@
-import React, {  useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, {  useContext, useState } from "react";
+import { Link,  useNavigate } from "react-router-dom";
 import Lottie from "lottie-react";
 import registerLottieData from "../../assets/lottie/register1.json";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -7,12 +7,14 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 // import SocialHandle from "../../common/SocialHandle/SocialHandle";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import SocialHandle from "../../common/SocialHandle/SocialHandle";
+import AuthContext from "../../provider/AuthContext/AuthContext";
+import Google from "../../shared/SocialHandle/Google";
+
 
 const Register = () => {
-//   const { createUser } = useContext(AuthContext);
+  const { createUser } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
-//   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -37,20 +39,20 @@ const Register = () => {
     }
 
     // Placeholder createUser logic
-    // createUser(email, password)
-    //   .then((result) => {
-    //     console.log(result.user);
-    //     toast.success("Registration successful!");
-    //     setTimeout(() => navigate("/"), 3000); // Redirect after 3 seconds
-    //   })
-    //   .catch((error) => {
-    //     console.log(error.message);
-    //     if (error.message.includes("auth/email-already-in-use")) {
-    //       toast.error("Account with this email already exists.");
-    //     } else {
-    //       toast.error(error.message);
-    //     }
-    //   });
+    createUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+        toast.success("Registration successful!");
+        setTimeout(() => navigate("/"), 3000); // Redirect after 3 seconds
+      })
+      .catch((error) => {
+        console.log(error.message);
+        if (error.message.includes("auth/email-already-in-use")) {
+          toast.error("Account with this email already exists.");
+        } else {
+          toast.error(error.message);
+        }
+      });
   };
 
   return (
@@ -141,15 +143,15 @@ const Register = () => {
               Signin
             </Link>
           </p>
-          {/* Google log in  */}
+          {/* Google log in  */} 
 
-          {/* <div className="m-4 "> 
-            <SocialHandle></SocialHandle> */}
-
+            <div className="m-4 ">  
+            <Google></Google>
             </div>
           
         </div>
         
+      </div>
       </div>
     
   );

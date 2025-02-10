@@ -8,7 +8,10 @@ import { ToastContainer } from "react-toastify"; // Import ToastContainer
 import "react-toastify/dist/ReactToastify.css"; // Import Toast styles
 // import axios from "axios";
 import Lottie from "lottie-react";
+import AuthContext from "../../provider/AuthContext/AuthContext";
+import Google from "../../shared/SocialHandle/Google";
 const SignIn = () => {
+    const {signInUser, signInWithGoogle} = useContext(AuthContext);
 //   const { signInUser, signInWithGoogle } = useContext(AuthContext);
 //   const [loading, setLoading] = useState(false); 
   const navigate = useNavigate(); 
@@ -27,46 +30,48 @@ const SignIn = () => {
 
     // setLoading(true);
 
-    // signInUser(email, password)
-    //   .then((result) => {
-    //     console.log("sign in", result.user.email);
-    //     const user = {email: email}
-    //     // axios functionality starts from here
-    //     axios.post('https://volunteer-management-server-ten.vercel.app/jwt', user, {withCredentials: true})
-    //     .then(res=>{
-    //       console.log(res.data);
-    //     })
+    signInUser(email, password)
+      .then(result => {
+        // console.log("sign in", result.user.email);
+        console.log("sign in", result.user);
+  })
+        // const user = {email: email}
+        // axios functionality starts from here
+        // axios.post('https://volunteer-management-server-ten.vercel.app/jwt', user, {withCredentials: true})
+        // .then(res=>{
+        //   console.log(res.data);
+        // })
 
-    //     navigate(from);
-    //     // SweetAlert for successful sign-in
-    //     Swal.fire({
-    //       icon: "success",
-    //       title: "Sign In Successful!",
-    //       text: "Welcome back!",
-    //       showConfirmButton: false,
-    //       timer: 1500,
-    //     });
+        // navigate(from);
+        // SweetAlert for successful sign-in
+        Swal.fire({
+          icon: "success",
+          title: "Sign In Successful!",
+          text: "Welcome back!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
 
         // Redirect to home page after successful sign-in
-        navigate("/"); 
+        navigate("/")
 
     //     // clear form after successful login
 
     //     form.reset(); 
     //     setLoading(false);
     //   })
-    //   .catch((error) => {
-    //     console.error(error);
-    //     Swal.fire({
-    //       icon: "error",
-    //       title: "Sign In Failed",
-    //       text: "Invalid email or password. Please try again.",
-    //     });
-    //     setLoading(false);
-    //   });
+      .catch((error) => {
+        console.error(error);
+        Swal.fire({
+          icon: "error",
+          title: "Sign In Failed",
+          text: "Invalid email or password. Please try again.",
+        });
+        setLoading(false);
+      });
   };
 
-  // Handle Google sign-in
+//   Handle Google sign-in
 //   const handleGoogleSignIn = () => {
 //     setLoading(true);
 
@@ -145,7 +150,7 @@ const SignIn = () => {
 
           
           {/* Social Handle (Google) */}
-          {/* <SocialHandle /> */}
+          <Google />
         </div>
       </div>
 

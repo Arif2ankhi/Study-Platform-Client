@@ -45,6 +45,8 @@ https://github.com/Arif2ankhi/Study-Platform-Client
 
 ## Server:
 
+https://github.com/Arif2ankhi/Study-Platform-Server
+
 
 
 

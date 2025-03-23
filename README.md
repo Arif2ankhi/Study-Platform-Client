@@ -1,8 +1,59 @@
-# React + Vite
+## 🎁Cumulative Study Platform🎆
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Short Description: 
 
-Currently, two official plugins are available:
+## ⚙️ Technologies used to build up this project:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This site has been build with the help of modern technologies as
+1.JavaScript: has been used for as primary coding language.
+
+2.MongoDB for creating  data for gaming information information.
+
+3.React for building UI
+
+4.CSS: to design and provide the side an amazing outlook.
+
+Marquee to dynamic view of brand
+6.Different animation effect to give the user best UI experience.
+
+7.Sweet alert , React toast , tooltio, animate css and react simple typewriter 
+
+### 📌📌 Key Features: Add later
+
+
+
+## Assignment-10-Camellia : 
+
+### Private link:
+
+
+
+### Client - 
+
+https://github.com/Programming-Hero-Web-Course4/b10a12-client-side-Arif2ankhi
+
+### Server -
+
+ https://github.com/Programming-Hero-Web-Course4/b10a12-server-side-Arif2ankhi
+
+# Public repo link 
+
+## Client :
+
+https://github.com/Arif2ankhi/Study-Platform-Client
+
+
+## Server:
+
+
+
+
+
+# Project live link:
+
+
+
+
+
+
+## Thank You 
